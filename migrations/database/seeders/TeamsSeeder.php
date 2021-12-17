@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TeamsSeeder extends Seeder
 {
@@ -13,6 +14,10 @@ class TeamsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker =\Faker\Factory::create();
+                    DB::table('teams')->insert([
+                'team_name' => "Heat",
+                'foundation' => $faker->numberBetween(1946,1980),
+            ]);
     }
 }

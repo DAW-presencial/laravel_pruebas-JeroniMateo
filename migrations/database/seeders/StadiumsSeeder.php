@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class StadiumsSeeder extends Seeder
 {
@@ -13,6 +14,13 @@ class StadiumsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker =\Faker\Factory::create();
+
+        for ($i=0; $i < 10; $i++) { 
+            DB::table('stadiums')->insert([
+                'stadium_name'=> $faker->city(),
+                'capacity'=>$faker ->numberBetween(20000,100000),
+            ]);
+        };
     }
 }

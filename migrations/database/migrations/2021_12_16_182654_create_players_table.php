@@ -18,6 +18,7 @@ class CreatePlayersTable extends Migration
             $table->string('player_name');
             $table->integer('age');
             $table->string('nationality');
+            $table->string('position');
         });
     }
 
