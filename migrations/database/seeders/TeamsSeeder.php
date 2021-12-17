@@ -16,7 +16,7 @@ class TeamsSeeder extends Seeder
     {
         $faker =\Faker\Factory::create();
                     DB::table('teams')->insert([
-                'team_name' => "Heat",
+                'team_name' => "Dallas",
                 'foundation' => $faker->numberBetween(1946,1980),
             ]);
     }
