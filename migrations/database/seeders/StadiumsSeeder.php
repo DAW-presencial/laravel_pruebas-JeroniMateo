@@ -16,7 +16,7 @@ class StadiumsSeeder extends Seeder
     {
         $faker =\Faker\Factory::create();
 
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=0; $i < 30; $i++) { 
             DB::table('stadiums')->insert([
                 'stadium_name'=> $faker->city(),
                 'capacity'=>$faker ->numberBetween(20000,100000),

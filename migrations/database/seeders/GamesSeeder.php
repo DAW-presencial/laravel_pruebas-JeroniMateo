@@ -18,23 +18,44 @@ class GamesSeeder extends Seeder
         //
         $faker =\Faker\Factory::create();
 
-        for ($i=0; $i <20 ; $i++) { 
+        for ($i=0; $i <82 ; $i++) { 
             DB::table('games')->insert([
                 'match' => $faker->date(),
                 'local' => $faker->randomElement([
-                    "Clippers",
-                    "Lakers",
-                    "Warriors",
-                    "Suns",
-                    "Spurs"
+                  "Suns",
+                  "Warriors",
+                  "Jazz",
+                  "Grizzlies",
+                  "Clippers",
+                  "Lakers",
+                  "Nuggets",
+                  "Mavericks",
+                  "Timberwolves",
+                  "Trail Blazers",
+                  "Spurs",
+                  "Kings",
+                  "Thunder",
+                  "Pelicans",
+                  "Rockets"
                 ]),
 
                 'visitant' => $faker->randomElement([
                     "Nets",
+                    "Bulls",
                     "Bucks",
+                    "Cavaliers",
+                    "Heat",
+                    "Wizards",
                     "76ers",
                     "Celtics",
-                    "Heat"
+                    "Hornets",
+                    "Raptors",
+                    "Hawks",
+                    "Knicks",
+                    "Pacers",
+                    "Magic",
+                    "Pistons"
+                   
                 ]), 
             ]);
             }   
