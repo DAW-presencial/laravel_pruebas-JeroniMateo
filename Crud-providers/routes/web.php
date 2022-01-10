@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+require __DIR__. 'auth.php';
+
+Route::resource('cuentas', ContactosController::class);
+    
+
