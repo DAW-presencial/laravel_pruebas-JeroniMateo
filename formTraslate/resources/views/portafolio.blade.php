@@ -3,6 +3,6 @@
 @section('title','Portafolio')
 
 
-@section('portafolio')
+@section('content')
     <h1>Portafolio</h1>
 @endsection
