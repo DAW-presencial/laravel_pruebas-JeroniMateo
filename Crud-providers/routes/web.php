@@ -18,8 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-require __DIR__. 'auth.php';
 
-Route::resource('cuentas', ContactosController::class);
-    
+
+Route::resource('contactos', ContactosController::class);
+
+
 
