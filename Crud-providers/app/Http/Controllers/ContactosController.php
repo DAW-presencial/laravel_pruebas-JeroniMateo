@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 
 class ContactosController extends Controller
@@ -12,8 +13,15 @@ class ContactosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        echo "hola mundo,estas en mi agenda de contacctos";
+    {   
+        $contactos = [
+            ['nombre'=> 'telefono'],
+            ['nombre'=> 'telefono'],
+            ['nombre'=> 'telefono'],
+            ['nombre'=> 'telefono'],
+        ];
+
+        return view('contactos',compact('contactos'));
     }
 
     /**
