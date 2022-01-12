@@ -4,14 +4,14 @@
     
 
         <!-- Creamos el formulario de introducción de un nuevo contacto -->
-        <h2>Nuevo contacto</h2>
+        <h2>Agenda Contactos</h2>
         <form>
             <!-- Metemos los contactos ya existentes ocultos en el formulario -->
             <div style="align-items: left">
                 <?php
-                foreach ($agenda as $nom => $telf) {
-                    echo '<input type="hidden" name="agenda[' . $nom . ']" ';
-                    echo 'value="' . $telf . '"/>';
+                foreach ($contactos as $nombre => $telefono) {
+                    echo '<input type="hidden" name="contactos[' . $nombre . ']" ';
+                    echo 'value="' . $telefono . '"/>';
                 }
                 ?>
                 <label>Nombre:<input type="text" name="nombre"/></label><br />
@@ -20,5 +20,5 @@
             </div>
         </form>
 
-        
+
 @endsection
