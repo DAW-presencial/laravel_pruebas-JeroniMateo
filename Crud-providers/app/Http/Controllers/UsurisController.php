@@ -16,6 +16,7 @@ class UsurisController extends Controller
         $usuaris=[
             ['name' => 'apellidos'],
         ];
+        
     }
 
     /**

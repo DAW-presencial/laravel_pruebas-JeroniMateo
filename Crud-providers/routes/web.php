@@ -21,4 +21,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/contactos','ContactosController@index')->name('contactos');
+Route::get('/usuaris','UsuarisController@index')->name('usuaris');
+
 require __DIR__.'/auth.php';
+
