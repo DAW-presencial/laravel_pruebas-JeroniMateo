@@ -18,9 +18,9 @@ class UsuarisSeeder extends Seeder
     public function run()
     {
         DB::table('usuaris')->insert([
-            'name' => "Jeroni",
-            'apellidos' => "Mateo",
-            'email'=>'jmateo@cifpfbmoll.eu',
+            'name' => "Rafael",
+            'apellidos' => "Andión",
+            'email'=>'randion@cifpfbmoll.eu',
             'password' => Hash::make('secretos'),
             'remember_token' => Str::random(10),
 
