@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UsuarisSeeder extends Seeder
 {
@@ -13,6 +17,13 @@ class UsuarisSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('usuaris')->insert([
+            'name' => "Jeroni",
+            'apellidos' => "Mateo",
+            'email'=>'jmateo@cifpfbmoll.eu',
+            'password' => Hash::make('secretos'),
+            'remember_token' => Str::random(10),
+
+        ]);
     }
 }
