@@ -24,3 +24,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home','HomeController@index')->name('home');
 Auth::routes();
 
+Auth::routes(['register'=> true ]);
