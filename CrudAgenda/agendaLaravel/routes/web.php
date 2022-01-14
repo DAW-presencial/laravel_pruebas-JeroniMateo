@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('contactos','AgendaController')
+    ->parameters(['contactos'=>'agenda'])
+    ->names('agenda')
+    ->middleware('auth');
+
+
+Route::view('/contactos', 'contactos')->name('contactos');
+
 Route::get('/home','HomeController@index')->name('home');
 Auth::routes();
 
