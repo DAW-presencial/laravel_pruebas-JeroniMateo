@@ -23,5 +23,12 @@ class UsersSeeder extends Seeder
             'password' => Hash::make('secretos'),
             'remember_token' => Str::random(10),
         ]);
+        DB::table('users')->insert([
+            'name'=>'Rafael',
+            'email'=>'randion@cifpfbmoll.eu',
+            'email_verified_at' => now(),
+            'password' => Hash::make('secretos'),
+            'remember_token' => Str::random(10),
+        ]);
     }
 }

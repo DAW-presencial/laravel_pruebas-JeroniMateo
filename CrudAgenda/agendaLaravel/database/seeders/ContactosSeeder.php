@@ -18,5 +18,9 @@ class ContactosSeeder extends Seeder
             'nombre'=>'Jeroni',
             'telefono'=>'123456789'
         ]);
+        DB::table('contactos')->insert([
+            'nombre'=>'Rafael',
+            'telefono'=>'987654321'
+        ]);
     }
 }
