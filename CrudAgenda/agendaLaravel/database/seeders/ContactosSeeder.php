@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ContactosSeeder extends Seeder
 {
@@ -13,6 +14,9 @@ class ContactosSeeder extends Seeder
      */
     public function run()
     {
-        
+        DB::table('contactos')->insert([
+            'nombre'=>'Jeroni',
+            'telefono'=>'123456789'
+        ]);
     }
 }
