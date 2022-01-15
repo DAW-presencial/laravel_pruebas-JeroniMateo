@@ -9,6 +9,6 @@
         <ol>
             <li><a href="/portafolio"></a>Save your files</li>
             <li><a href="formtraslate"></a>Traslating Forms</li>
-            <li><a href="Contacto"></a>Contact us</li>
+            <li><a href="contacto"></a>Contact us</li>
         </ol>
 @endsection

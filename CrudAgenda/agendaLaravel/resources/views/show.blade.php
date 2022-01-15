@@ -6,8 +6,8 @@
 <h1>{{$contacto->title}}</h1>
 
 @auth
-    <a href="{{route('agenda.edit', $contacto)}}">Editar</a>
-    <form method="POST" action="{{route('agenda.destroy'), $contacto}}">
+    <a href="{{route('contactos.edit', $contacto)}}">Editar</a>
+    <form method="POST" action="{{route('contactos.destroy'), $contacto}}">
         @csrf @method('DELETE')
         <button>Eliminar</button>
     </form>

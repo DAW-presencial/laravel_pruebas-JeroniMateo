@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Agenda;
 
-class AgendaController extends Controller
+
+use App\Models\Contactos;
+
+class ContactosController extends Controller
 {
   public function __construct()
   {
@@ -15,16 +17,12 @@ class AgendaController extends Controller
 
     public function index()
     {
-        return view('agenda.index',[
-            'agenda' => Agenda::latest()->paginate()
-        ]);
+       return view('contactos.index',[
+            'contactos'=> Contactos::latest()
+       ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create()
     {
         //
@@ -49,7 +47,11 @@ class AgendaController extends Controller
      */
     public function show($id)
     {
-        //
+        
+
+        return view('contactos.show',[
+            'contactos'=> Contactos::findOrFail($id)
+        ]);
     }
 
     /**

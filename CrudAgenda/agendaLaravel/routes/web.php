@@ -21,15 +21,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('contactos','AgendaController')
-    ->parameters(['contactos'=>'agenda'])
-    ->names('agenda')
-    ->middleware('auth');
 
 
-Route::view('/contactos', 'contactos')->name('contactos');
+
 
 Route::get('/home','HomeController@index')->name('home');
+Route::get('/contactos','ContactosController@index')->name('contactos.index');
+Route::get('/contactos/{id','ContactosController@show')->name('contactos.show');
+
+
 Auth::routes();
 
 Auth::routes(['register'=> true ]);
