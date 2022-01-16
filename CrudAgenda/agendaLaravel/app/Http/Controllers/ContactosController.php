@@ -17,6 +17,14 @@ class ContactosController extends Controller
 
     public function index()
     {
+        $contactos=[
+            ['nombre'=>'telefono'],
+            ['nombre'=>'telefono'],
+            ['nombre'=>'telefono'],
+            ['nombre'=>'telefono'],
+        ];
+
+
        return view('contactos.index',[
             'contactos'=> Contactos::latest()
        ]);
