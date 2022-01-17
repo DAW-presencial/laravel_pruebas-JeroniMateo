@@ -17,14 +17,8 @@ class ContactosController extends Controller
 
     public function index()
     {
-        $contactos=[
-            ['nombre'=>'telefono'],
-            ['nombre'=>'telefono'],
-            ['nombre'=>'telefono'],
-            ['nombre'=>'telefono'],
-        ];
-
-
+     
+        
        return view('contactos.index',[
             'contactos'=> Contactos::latest()
        ]);
@@ -55,7 +49,7 @@ class ContactosController extends Controller
      */
     public function show($id)
     {
-        
+
 
         return view('contactos.show',[
             'contactos'=> Contactos::findOrFail($id)
