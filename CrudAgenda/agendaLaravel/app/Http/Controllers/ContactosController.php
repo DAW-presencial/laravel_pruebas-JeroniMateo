@@ -27,7 +27,7 @@ class ContactosController extends Controller
   
     public function create()
     {
-        //
+        return view('contactos.create');
     }
 
     /**
@@ -36,9 +36,12 @@ class ContactosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+
+       Contactos::create(request()->all());
+
+       return redirect()->route('contactos.index');
     }
 
     /**

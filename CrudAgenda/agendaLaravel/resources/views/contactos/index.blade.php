@@ -6,15 +6,21 @@
 @section('content')
 
 <h1>@lang('contactos')</h1>
+<a href="{{ route('contactos.create') }}">Crear Contacto</a>
+
+
 <ul>
-    @forelse($contactos as $contactosItem)
-        <li><a href=" {{ route('contactos.show'), $contactosItem }} ">
-            {{ $contactosItem->nombre }} <small>{{$contactosItem->telefono}}</small> {{$contactosItem->updated_at->diffForHumans() }}</a></li>
-  
+    @forelse($contactos as $contacto)
+    <li><a href=" {{ route('contactos.show'), $contacto }} ">
+            {{ $contacto->nombre }} <small>{{$contacto->telefono}}</small>
+            {{$contacto->updated_at->diffForHumans() }}</a></li>
+
+
     @empty
-        <li>No hay contactos en la Agenda</li>
+    <li>No hay contactos en la Agenda</li>
+
     @endforelse
     {{ $contactos->links() }}
-</ul>      
+</ul>
 
 @endsection
