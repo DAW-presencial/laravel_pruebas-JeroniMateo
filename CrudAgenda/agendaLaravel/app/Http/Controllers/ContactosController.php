@@ -47,12 +47,10 @@ class ContactosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Contactos $contactos)
     {
-
-
         return view('contactos.show',[
-            'contactos'=> Contactos::findOrFail($id)
+            'contactos'=> $contactos
         ]);
     }
 

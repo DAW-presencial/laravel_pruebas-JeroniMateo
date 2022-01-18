@@ -28,7 +28,7 @@ Auth::routes();
 
 Route::get('/home','HomeController@index')->name('home');
 Route::get('/contactos','ContactosController@index')->name('contactos.index');
-Route::get('/contactos/{id}','ContactosController@show')->name('contactos.show');
+Route::get('/contactos/{contactos}','ContactosController@show')->name('contactos.show');
 
 
 

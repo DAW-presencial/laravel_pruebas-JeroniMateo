@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contactos extends Model
 {
-    use HasFactory;
+    public function getRouteKeyName(){
+        return 'nombre';
+    }
 }
