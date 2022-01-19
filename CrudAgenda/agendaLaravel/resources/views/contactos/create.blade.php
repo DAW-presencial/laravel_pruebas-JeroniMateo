@@ -18,14 +18,14 @@
     @csrf
     <label for="">
         Nombre:
-        <input type="text" name="nombre" id="">
+        <input type="text" name="nombre" value="{{ old('nombre') }}" id="">
     </label>
     
     <br>
     
     <label for="">
         Telefono:
-        <input type="number" name="telefono" id="">
+        <input type="number" name="telefono" value="old('telefono')" id="">
     </label>
 
     <button>Crear</button>

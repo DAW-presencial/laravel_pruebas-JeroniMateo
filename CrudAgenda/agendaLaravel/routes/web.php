@@ -26,7 +26,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/contactos', 'ContactosController@index')->name('contactos.index');
+
 Route::get('/contactos/create', 'ContactosController@create')->name('contactos.create');
+Route::get('/contactos/{contactos}/editar', 'ContactosController@edit')->name('contactos.edit');
+Route::patch('/contactos/{contactos}', 'ContactosController@update')->name('contactos.update');
+
 
 Route::post('/contactos', 'ContactosController@store')->name('contactos.store');
 

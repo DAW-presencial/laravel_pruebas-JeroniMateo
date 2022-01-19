@@ -4,7 +4,8 @@
 
 
 @section('content')
-<h1>{{$contactos->nombre}}</h1>
+<a href="{{ route('contactos.edit', $contactos) }}">Editar Contacto</a>
+    <h1>{{$contactos->nombre}}</h1>
     <p>{{$contactos->telefono}}</p>
     <p>{{$contactos->created_at->diffForHumans()}}</p>
 

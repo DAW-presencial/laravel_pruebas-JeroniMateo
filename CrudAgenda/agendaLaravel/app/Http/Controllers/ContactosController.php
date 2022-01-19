@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateContactoRequest;
+use App\Http\Requests\SaveContactoRequest;
 use Illuminate\Http\Request;
 
 
@@ -37,7 +38,7 @@ class ContactosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateContactoRequest $request)
+    public function store(SaveContactoRequest $request)
     {       
 
        Contactos::create($request->validated()); //['nombre','telefono','created_at','updated_at']
@@ -64,9 +65,11 @@ class ContactosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Contactos $contactos)
     {
-        //
+        return view('contactos.edit',[
+            'contactos'=> $contactos
+        ]);
     }
 
     /**
@@ -76,9 +79,12 @@ class ContactosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Contactos $contactos,  SaveContactoRequest $request)
     {
-        //
+         $contactos->update($request->validated());
+
+         return redirect()->route('contactos.show', $contactos);
+
     }
 
     /**
