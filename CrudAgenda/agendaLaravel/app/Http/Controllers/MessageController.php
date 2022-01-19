@@ -2,33 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateContactoRequest;
 use Illuminate\Http\Request;
 
-
-use App\Models\Contactos;
-
-class ContactosController extends Controller
+class MessageController extends Controller
 {
-  public function __construct()
-  {
-      $this->middleware('auth')->except('index','show');
-  }
-
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-     
-        
-       return view('contactos.index',[
-            'contactos'=> Contactos::latest()
-       ]);
+        //
     }
 
-  
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view('contactos.create');
+        //
     }
 
     /**
@@ -37,12 +32,20 @@ class ContactosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateContactoRequest $request)
-    {       
+    public function store()
+    {
+        $message = request()->validate([
+            'name'=> 'requiered',
+            'email' => 'requiered ',
+            'password' => 'requiered'
+        ],
+        [
+            'name.required'=> __('I need your name'),
+            'email.required' => __('Email not exist'),
+            'password.requiered' => __('Invalidate Password')
+        ]);
 
-       Contactos::create($request->validated()); //['nombre','telefono','created_at','updated_at']
-
-       return redirect()->route('contactos.index');
+        
     }
 
     /**
@@ -51,11 +54,9 @@ class ContactosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Contactos $contactos)
+    public function show($id)
     {
-        return view('contactos.show',[
-            'contactos'=> $contactos
-        ]);
+        //
     }
 
     /**
