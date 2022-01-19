@@ -38,8 +38,13 @@ class ContactosController extends Controller
      */
     public function store()
     {
+        //Fields request & validation
+       $fields = request()->validate([
+            'nombre'=>'required',
+            'telefono'=>'required'
+        ]);
 
-       Contactos::create(request()->all());
+       Contactos::create($fields); //['nombre','telefono','created_at','updated_at']
 
        return redirect()->route('contactos.index');
     }
