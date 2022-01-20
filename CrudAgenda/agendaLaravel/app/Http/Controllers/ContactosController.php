@@ -29,7 +29,9 @@ class ContactosController extends Controller
   
     public function create()
     {
-        return view('contactos.create');
+        return view('contactos.create',[
+            'contactos'=> new Contactos
+        ]);
     }
 
     /**
@@ -93,8 +95,10 @@ class ContactosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Contactos $contactos)
     {
-        //
+        $contactos->delete();
+
+        return redirect()->route('contactos.index');
     }
 }
