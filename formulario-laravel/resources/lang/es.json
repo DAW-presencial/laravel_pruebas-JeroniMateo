@@ -4,6 +4,7 @@
     "lastname":"apellido",
     "email":"correo",
     "phone":"telefono",
+    "type":"tipo",
     "coments":"comentarios",
     "send":"enviar",
 

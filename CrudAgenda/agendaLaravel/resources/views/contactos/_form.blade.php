@@ -9,5 +9,9 @@
     Telefono:
     <input type="number" name="telefono" value="{{ old('telefono', $contactos->telefono) }}" id="">
 </label>
+<label for="">
+    Tipo:
+    <input type="text" name="tipo" value="{{ old('tipo', $contactos->tipo) }}" id="">
+</label>
 <br>
 <button>{{ $btnText }}</button>

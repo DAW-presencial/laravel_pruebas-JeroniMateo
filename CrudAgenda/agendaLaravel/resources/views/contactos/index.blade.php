@@ -12,7 +12,7 @@
 <ul>
     @forelse($contactos as $contacto)
     <li><a href=" {{ route('contactos.show'), $contacto }} ">
-            {{ $contacto->nombre }} <small>{{$contacto->telefono}}</small>
+            {{ $contacto->nombre }} <small>{{$contacto->telefono}}</small><small>{{$contacto->tipo}}</small>
             {{$contacto->updated_at->diffForHumans() }}</a></li>
 
 

@@ -26,7 +26,8 @@ class SaveContactoRequest extends FormRequest
         return [
                     //Fields request & validation
             'nombre'=>'required',
-            'telefono'=>'required'
+            'telefono'=>'required',
+            'tipo'=>'required'
 
         ];
     }
@@ -35,7 +36,8 @@ class SaveContactoRequest extends FormRequest
     {
         return [
             'nombre.required'=> 'El contacto necesita un nombre',
-            'telefono.required'=>'El contacto necesita un telefono'
+            'telefono.required'=>'El contacto necesita un telefono',
+            'tipo.required'=>'Es necesario especificar el tipo de telefono'
         ];
     }
     }

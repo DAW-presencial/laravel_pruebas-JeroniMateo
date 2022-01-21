@@ -43,7 +43,7 @@ class ContactosController extends Controller
     public function store(SaveContactoRequest $request)
     {       
 
-       Contactos::create($request->validated()); //['nombre','telefono','created_at','updated_at']
+       Contactos::create($request->validated()); //['nombre','telefono','tipo','created_at','updated_at']
 
        return redirect()->route('contactos.index');
     }

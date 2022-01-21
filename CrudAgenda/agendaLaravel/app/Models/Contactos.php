@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contactos extends Model
 {
-    protected $fillable =['nombre','telefono'];
+    protected $fillable =['nombre','telefono','tipo'];
 
     public function getRouteKeyName()
     {

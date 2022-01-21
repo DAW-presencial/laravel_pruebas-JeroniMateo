@@ -16,11 +16,13 @@ class ContactosSeeder extends Seeder
     {
         DB::table('contactos')->insert([
             'nombre'=>'Jeroni',
-            'telefono'=>'123456789'
+            'telefono'=>'123456789',
+            'tipo'=>'Movil'
         ]);
         DB::table('contactos')->insert([
             'nombre'=>'Rafael',
-            'telefono'=>'987654321'
+            'telefono'=>'987654321',
+            'tipo'=>'Fijo'
         ]);
     }
 }
