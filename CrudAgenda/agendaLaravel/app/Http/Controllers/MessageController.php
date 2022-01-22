@@ -36,14 +36,18 @@ class MessageController extends Controller
     {
         $message = request()->validate([
             'name'=> 'requiered',
+            'apellidos'=>'required',
             'email' => 'requiered ',
             'password' => 'requiered'
         ],
         [
             'name.required'=> __('I need your name'),
+            'apellidos.required'=> __('I need your lastname'),
             'email.required' => __('Email not exist'),
             'password.requiered' => __('Invalidate Password')
         ]);
+
+        return 'Usuario valido';
 
         
     }
