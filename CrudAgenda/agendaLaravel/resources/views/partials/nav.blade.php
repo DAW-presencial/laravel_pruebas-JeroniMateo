@@ -7,7 +7,9 @@
             <li><a href="{{route('login')}}">Login</a></li>
         @else
             <li><a href="#"    onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();"> >Cerrar Sesion</a></li>
+                document.getElementById('logout-form').submit();"> 
+                Cerrar Sesion</a>
+            </li>
         @endguest
     </ul>
 </nav>

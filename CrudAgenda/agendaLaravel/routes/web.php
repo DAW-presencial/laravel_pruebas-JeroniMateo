@@ -42,3 +42,4 @@ Route::delete('/contactos/{contactos}', 'ContactosController@destroy')->name('co
 Auth::routes();
 
 Auth::routes(['register' => true]);
+
