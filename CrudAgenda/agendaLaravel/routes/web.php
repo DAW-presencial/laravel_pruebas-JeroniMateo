@@ -25,6 +25,7 @@ Auth::routes();
 Route::resource('contactos','Contactos Controller');
 
 
+
 /* Route::get('/contactos', 'ContactosController@index')->name('contactos.index');
 Route::get('/contactos/create', 'ContactosController@create')->name('contactos.create');
 

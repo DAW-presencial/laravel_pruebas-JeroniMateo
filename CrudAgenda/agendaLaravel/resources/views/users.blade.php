@@ -5,6 +5,8 @@
 @section('content')
 
 <h1>Users</h1>   
+
+
     <form method="POST" action="{{ route('users') }}">
         @csrf
         <input type="text" name="name" placeholder="name" id="" value=" {{ old('name')}}"><br>
@@ -21,6 +23,6 @@
 
         <button>Enviar</button>
     </form>
-
+    
     
 @endsection

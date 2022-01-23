@@ -6,6 +6,8 @@
 @section('content')
     <a href="{{ route('contactos.edit', $contactos) }}">Editar Contacto</a>
     
+    
+
     <form action="{{ route('contactos.destroy', $contactos) }}" method="POST">
         @csrf @method('DELETE')
         <button>Eliminar</button>

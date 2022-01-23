@@ -8,6 +8,7 @@
 <h1>@lang('contactos')</h1>
 <a href="{{ route('contactos.create') }}">Crear Contacto</a>
 
+    
 
 <ul>
     @forelse($contactos as $contacto)

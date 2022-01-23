@@ -47,7 +47,7 @@ class MessageController extends Controller
             'password.requiered' => __('Invalidate Password')
         ]);
 
-        return 'Usuario valido';
+        return redirect()->route('contactos.index')->with('status','usuario validado');
 
         
     }
