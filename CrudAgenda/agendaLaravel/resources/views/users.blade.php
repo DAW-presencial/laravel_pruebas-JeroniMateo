@@ -10,8 +10,8 @@
         <input type="text" name="name" placeholder="name" id="" value=" {{ old('name')}}"><br>
         {!!    $errors->first('name','<small>:message</small><br>')  !!} 
 
-        <input type="text" name="apellidos" placeholder="apellidos" id="{{ old('apellidos')}}"><br>
-        {!!    $errors->first('apellidos','<small>:message</small><br>')  !!} 
+        <input type="text" name="last_name" placeholder="last_name" id="{{ old('last_name')}}"><br>
+        {!!    $errors->first('last_name','<small>:message</small><br>')  !!} 
 
         <input type="email" name="email" placeholder="email" id="" value="{{ old('email')}}"><br>
         {!!    $errors->first('email','<small>:message</small><br>')  !!} 

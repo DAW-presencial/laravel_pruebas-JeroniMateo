@@ -170,5 +170,6 @@ return [
         'time'                  => 'hora',
         'subject'               => 'assumpte',
         'message'               => 'missatge',
+        'type'                  =>  'tipo'
     ],
 ];

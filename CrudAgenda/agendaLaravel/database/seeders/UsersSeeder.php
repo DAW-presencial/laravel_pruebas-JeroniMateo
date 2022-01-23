@@ -18,7 +18,7 @@ class UsersSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name'=>'Jeroni',
-            'apellidos'=>'Mateo',
+            'last_name'=>'Mateo',
             'email'=>'jmateo@cifpfbmoll.eu',
             'email_verified_at' => now(),
             'password' => Hash::make('secretos'),
@@ -26,7 +26,7 @@ class UsersSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name'=>'Rafael',
-            'apellidos'=>'Andión',
+            'last_name'=>'Andión',
             'email'=>'randion@cifpfbmoll.eu',
             'email_verified_at' => now(),
             'password' => Hash::make('secretos'),
