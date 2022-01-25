@@ -13,4 +13,9 @@ class Contactos extends Model
     {
         return 'nombre';
     }
+
+    public function phonebook()
+    {
+       return $this->belongsTo(Phonebook::class);
+    }
 }
