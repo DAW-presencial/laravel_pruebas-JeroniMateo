@@ -11,7 +11,7 @@
     @include('partials.validation-errors')
 
 
-<form method="POST" action="{{ route('contactos.update', $contactos ) }}">
+<form method="POST" action="{{ route('contactos.update', $contacto ) }}">
      @method('PATCH')
   
     @include('contactos._form', ['btnText' => 'Actualizar'])

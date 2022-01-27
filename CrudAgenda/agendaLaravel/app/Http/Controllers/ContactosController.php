@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateContactoRequest;
 use App\Http\Requests\ContactoRequest;
+use App\Models\Contacto;
 use Illuminate\Http\Request;
 
 
@@ -23,17 +24,19 @@ class ContactosController extends Controller
      
         
        return view('contactos.index',[
-            'contactos'=> Contactos::latest()
+           'newContacto'=> new Contacto,
+            'contactos'=> Contacto::latest()
        ]);
     }
 
   
     public function create()
     {
-        $this->authorize('create-contactos');
+        $this->authorize('create', $contacto = new Contacto);
          
         return view('contactos.create',[
-                'contactos'=> new Contactos
+
+                'contactos'=> $contacto
             ]);
         }
 
@@ -51,7 +54,10 @@ class ContactosController extends Controller
         
         
 
-       Contactos::create($request->validated()); //['nombre','telefono','tipo','created_at','updated_at']
+       Contacto::create($request->validated()); //['nombre','telefono','tipo','created_at','updated_at']
+
+       $this->authorize('create', $contacto = new Contacto);
+
 
        return redirect()->route('contactos.index')->with('status','Contacto creado');
     }
@@ -62,10 +68,10 @@ class ContactosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Contactos $contactos)
+    public function show(Contacto $contacto)
     {
         return view('contactos.show',[
-            'contactos'=> $contactos
+            'contactos'=> $contacto
         ]);
     }
 
@@ -75,10 +81,13 @@ class ContactosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contactos $contactos)
+    public function edit(Contacto $contacto)
     {
+
+        $this->authorize('update', $contacto);
+
         return view('contactos.edit',[
-            'contactos'=> $contactos
+            'contactos'=> $contacto
         ]);
     }
 
@@ -89,11 +98,14 @@ class ContactosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Contactos $contactos,  ContactoRequest $request)
+    public function update(Contacto $contacto,  ContactoRequest $request)
     {
-         $contactos->update($request->validated());
 
-         return redirect()->route('contactos.show', $contactos)->with('status','Contacto actualizado');
+        $this->authorize('update', $contacto);
+
+         $contacto->update($request->validated());
+
+         return redirect()->route('contactos.show', $contacto)->with('status','Contacto actualizado');
 
     }
 
@@ -103,9 +115,12 @@ class ContactosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contactos $contactos)
+    public function destroy(Contacto $contacto)
     {
-        $contactos->delete();
+
+        $this->authorize('delete', $contacto);
+
+        $contacto->delete();
 
         return redirect()->route('contactos.index')->with('status','Contacto eliminado');
     }

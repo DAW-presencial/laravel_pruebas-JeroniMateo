@@ -6,14 +6,14 @@
 @section('content')
 
 <h1>@lang('contactos')</h1>
-@can('create-conctactos')
+@can('create', $newContacto)
 <a href="{{ route('contactos.create') }}">Crear Contacto</a>
 @endcan
 
     
 
 <ul>
-    @forelse($contactos as $contacto)
+    @forelse($contacto as $contacto)
     <li><a href=" {{ route('contactos.show'), $contacto }} ">
             {{ $contacto->nombre }} <small>{{$contacto->telefono}}</small><small>{{$contacto->tipo}}</small>
             {{$contacto->updated_at->diffForHumans() }}</a></li>
@@ -23,7 +23,7 @@
     <li>No hay contactos en la Agenda</li>
 
     @endforelse
-    {{ $contactos->links() }}
+    {{ $contacto->links() }}
 </ul>
 
 @endsection

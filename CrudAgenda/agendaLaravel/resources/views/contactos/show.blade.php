@@ -1,21 +1,32 @@
 @extends('layout')
 
-@section('nombre','Contactos | '$contactos->nombre )
+@section('nombre','Contactos | '$contacto->nombre )
 
 
 @section('content')
-    <a href="{{ route('contactos.edit', $contactos) }}">Editar Contacto</a>
+    <a href="{{ route('contactos.edit', $contacto) }}">Editar Contacto</a>
     
     
 
-    <form action="{{ route('contactos.destroy', $contactos) }}" method="POST">
+    <form action="{{ route('contactos.destroy', $contacto) }}" method="POST">
         @csrf @method('DELETE')
+        @can('delete', $contacto)
         <button>Eliminar</button>
+        @endcan
+        
+    </form>
+    
+    <form action="{{ route('contactos.destroy', $contacto) }}" method="POST">
+        @csrf @method('PATCH')
+        @can('update', $contacto)
+        <button>Editar</button>
+        @endcan
+        
     </form>
 
-    <h1>{{$contactos->nombre}}</h1>
-    <p>{{$contactos->telefono}}</p>
-    <p>{{$contactos->tipo}}</p>
-    <p>{{$contactos->created_at->diffForHumans()}}</p>
+    <h1>{{$contacto->nombre}}</h1>
+    <p>{{$contacto->telefono}}</p>
+    <p>{{$contacto->tipo}}</p>
+    <p>{{$contacto->created_at->diffForHumans()}}</p>
 
 @endsection
