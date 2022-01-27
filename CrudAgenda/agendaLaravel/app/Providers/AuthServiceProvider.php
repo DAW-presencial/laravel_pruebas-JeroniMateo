@@ -25,6 +25,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('create-contactos',function($user){
+            return $user->email === 'jmateo@cifpfbmoll.eu';
+        });
     }
 }

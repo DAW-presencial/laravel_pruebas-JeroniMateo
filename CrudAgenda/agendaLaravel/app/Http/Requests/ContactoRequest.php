@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
-class SaveContactoRequest extends FormRequest
+class ContactoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +14,7 @@ class SaveContactoRequest extends FormRequest
      */
     public function authorize()
     {
-        return true; 
+        return Gate::allows('create-contactos'); 
     }
 
     /**

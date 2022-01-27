@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('contactos','Contactos Controller');
+Route::resource('contactos','ContactosController');
 
 
 
