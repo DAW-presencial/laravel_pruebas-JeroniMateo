@@ -9,11 +9,12 @@
 <body>
     <div id="responsive">
         <h1>Hola Mundo</h1>
-        <button onclick="api_rest()">Crear</button>
-        <i class="fas fa"></i>
-        <p id="respuesta">Propiedades</p>
+        <button onclick="api_rest()" class="nav-link">Crear</button>
+        <i class="fas fa-building nav-icon"></i>
+        <div id="respuesta"></div>
+    
     </div>
 
-    <script src="/resources/js/apirest.js"></script>
+    <script src="/js/apirest.js"></script>
 </body>
 </html>

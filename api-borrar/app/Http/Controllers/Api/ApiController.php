@@ -14,8 +14,7 @@ class ApiController extends Controller
      */
     public function index()
     {
-        return view('api.apirest');
-        return "Ejecutano apirest";
+        return "New Apirest";
     }
 
     /**
