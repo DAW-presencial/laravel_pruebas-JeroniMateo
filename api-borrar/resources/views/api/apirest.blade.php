@@ -10,10 +10,18 @@
     <div id="responsive">
         <h1>Hola Mundo</h1>
         <button onclick="api_rest()" class="nav-link">Crear</button>
-        <i class="fas fa-building nav-icon"></i>
-        <div id="respuesta"></div>
-    
-    </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>LastName</th>
+                </tr>
+            </thead>
+            <tbody id="pilotos">
+                
+            </tbody>
+        </table>
 
     <script src="/js/apirest.js"></script>
 </body>
