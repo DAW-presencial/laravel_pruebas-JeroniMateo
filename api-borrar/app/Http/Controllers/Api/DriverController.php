@@ -44,7 +44,7 @@ class DriverController extends Controller
      */
     public function show($id)
     {
-        $driver =  Driver::findOrFail($id);
+        return $driver =  Driver::findOrFail($id);
     }
 
     /**
@@ -71,6 +71,6 @@ class DriverController extends Controller
      */
     public function destroy($id)
     {
-        $driver = Driver::findOrFail($id);
+        return Driver::destroy($id);
     }
 }
