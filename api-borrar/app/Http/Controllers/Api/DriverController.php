@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Driver;
 use Illuminate\Http\Request;
 
-class ApiController extends Controller
+class DriverController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -11,7 +11,7 @@ function api_rest() {
         
     };
 
-    xhttp.open("GET", "http://127.0.0.1:8000/api/apirest", true);
+    xhttp.open("GET", "http://127.0.0.1:8000/api/drivers", true);
     //xhttp.setRequestHeader('Content-Type', '');
     //xhttp.setRequestHeader('Acept',);
     xhttp.send();
