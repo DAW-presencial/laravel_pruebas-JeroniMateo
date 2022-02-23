@@ -26,7 +26,14 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $drivers = new Driver();
+
+        $drivers->fname = $request->input('fname');
+        $drivers->lname = $request->input('lname');
+        $drivers->driverteam = $request->input('driverteam');
+
+        $drivers->save();
+        return response()->json($drivers);
     }
 
     /**
@@ -37,7 +44,7 @@ class DriverController extends Controller
      */
     public function show($id)
     {
-        //
+        $driver =  Driver::findOrFail($id);
     }
 
     /**
@@ -49,7 +56,12 @@ class DriverController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $driver = Driver::findOrFail($id);
+        $driver->fname = $request->input('fname');
+        $driver->lname = $request->input('lname');
+  
+        $driver->driverteam = $request->input('driverteam');
+        $driver->save();
     }
 
     /**
@@ -60,6 +72,6 @@ class DriverController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $driver = Driver::findOrFail($id);
     }
 }
