@@ -9,7 +9,7 @@ class Driver extends Model
 {
     use HasFactory;
     protected $table = 'driver';
-    protected $primaryKey = 'driver_id';
-    protected $filable = ['driver_id','fname', 'lname'];
+    protected $primaryKey = 'id';
+    protected $filable = ['id','fname', 'lname'];
 
 }

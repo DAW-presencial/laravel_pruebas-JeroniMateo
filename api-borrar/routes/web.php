@@ -21,5 +21,5 @@ Route::get('/', function () {
 
 
 Route::get('/form',function(){
-    return view('api.form');
+    return view('api.form')->name('form');
  });

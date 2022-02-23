@@ -59,7 +59,6 @@ class DriverController extends Controller
         $driver = Driver::findOrFail($id);
         $driver->fname = $request->input('fname');
         $driver->lname = $request->input('lname');
-  
         $driver->driverteam = $request->input('driverteam');
         $driver->save();
     }

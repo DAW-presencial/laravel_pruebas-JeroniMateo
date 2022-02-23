@@ -4,7 +4,7 @@ function api_rest() {
          let tbody = "";
          var drivers = JSON.parse(xhttp.responseText);
          drivers.forEach(driver => {
-             tbody += `<tr><td>${driver.fname}</td><td>${driver.lname}</td><td>${driver.driverteam}</td></tr>`
+             tbody += `<tr><td>${driver.id}</td><td>${driver.fname}</td><td>${driver.lname}</td><td>${driver.driverteam}</td></tr>`
          });
         
         document.getElementById("pilotos").innerHTML = tbody;
