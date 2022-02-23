@@ -9,14 +9,16 @@
 </head>
 <body>
     <div id="responsive">
-        <h1>F1 History</h1>
+        <h1>F1 Drivers
+            
+        </h1>
         <button onclick="api_rest()" class="nav-link">Crear</button>
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Name</th>
                     <th>LastName</th>
+                    <th>Team</th>
                 </tr>
             </thead>
             <tbody id="pilotos">
@@ -24,6 +26,6 @@
             </tbody>
         </table>
 
-    <script src="/js/apirest.js"></script>
+    <script src="/js/drivers.js"></script>
 </body>
 </html>
